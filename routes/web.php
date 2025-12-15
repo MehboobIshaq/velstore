@@ -1,28 +1,29 @@
 <?php
 
-use App\Http\Controllers\Admin\AttributeController;
-use App\Http\Controllers\Admin\BannerController;
-use App\Http\Controllers\Admin\BrandController;
-use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\CustomerController;
-use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
-use App\Http\Controllers\Admin\LanguageController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\MenuController;
-use App\Http\Controllers\Admin\MenuItemController;
-use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\PageController;
-use App\Http\Controllers\Admin\PaymentController;
-use App\Http\Controllers\Admin\PaymentGatewayConfigController;
-use App\Http\Controllers\Admin\PaymentGatewayController;
-use App\Http\Controllers\Admin\ProductController;
-use App\Http\Controllers\Admin\ProductReviewController;
-use App\Http\Controllers\Admin\ProductVariantController;
-use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\BrandController;
+use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\RefundController;
-use App\Http\Controllers\Admin\SocialMediaLinkController;
 use App\Http\Controllers\Admin\VendorController;
 use App\Http\Controllers\SiteSettingsController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\PaymentController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\CustomerController;
+use App\Http\Controllers\Admin\LanguageController;
+use App\Http\Controllers\Admin\MenuItemController;
+use App\Http\Controllers\Store\CheckoutController;
+use App\Http\Controllers\Admin\AttributeController;
+use App\Http\Controllers\Admin\ProductReviewController;
+use App\Http\Controllers\Admin\PaymentGatewayController;
+use App\Http\Controllers\Admin\ProductVariantController;
+use App\Http\Controllers\Admin\SocialMediaLinkController;
+use App\Http\Controllers\Admin\PaymentGatewayConfigController;
+use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 
 /*
 |--------------------------------------------------------------------------
