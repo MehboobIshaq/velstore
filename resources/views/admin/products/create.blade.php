@@ -11,46 +11,48 @@
 
             {{-- Language Tabs --}}
             <ul class="nav nav-tabs" id="languageTabs" role="tablist">
-                @foreach($activeLanguages as $language)
+                @php $englishLang = $activeLanguages->where('code', 'en')->first(); @endphp
+                @if($englishLang)
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link {{ $loop->first ? 'active' : '' }}" 
-                                id="{{ $language->code }}-tab" 
+                        <button class="nav-link active" 
+                                id="{{ $englishLang->code }}-tab" 
                                 data-bs-toggle="tab" 
-                                data-bs-target="#{{ $language->code }}" 
+                                data-bs-target="#{{ $englishLang->code }}" 
                                 type="button" 
                                 role="tab">
-                            {{ ucwords($language->name) }}
+                            {{ ucwords($englishLang->name) }}
                         </button>
                     </li>
-                @endforeach
+                @endif
             </ul>
      
             <div class="tab-content mt-3" id="languageTabContent">
-                @foreach($activeLanguages as $language)
-                    <div class="tab-pane fade show {{ $loop->first ? 'active' : '' }}" 
-                         id="{{ $language->code }}" 
+                @php $englishLang = $activeLanguages->where('code', 'en')->first(); @endphp
+                @if($englishLang)
+                    <div class="tab-pane fade show active" 
+                         id="{{ $englishLang->code }}" 
                          role="tabpanel">
                         
                         {{-- Product Name --}}
-                        <label class="form-label">{{ __('cms.products.product_name') }} ({{ $language->code }})</label>
+                        <label class="form-label">{{ __('cms.products.product_name') }} ({{ $englishLang->code }})</label>
                        <input type="text"
-                            name="translations[{{ $language->code }}][name]"
-                            class="form-control @error("translations.{$language->code}.name") is-invalid @enderror"
-                            value="{{ old("translations.{$language->code}.name") }}">
+                            name="translations[{{ $englishLang->code }}][name]"
+                            class="form-control @error("translations.{$englishLang->code}.name") is-invalid @enderror"
+                            value="{{ old("translations.{$englishLang->code}.name") }}">
 
-                        @error("translations.{$language->code}.name")
+                        @error("translations.{$englishLang->code}.name")
                             <div class="invalid-feedback d-block">{{ $message }}</div>
                         @enderror
             
                         {{-- Description --}}
-                        <label class="form-label mt-3">{{ __('cms.products.description') }} ({{ $language->code }})</label>
-                        <textarea name="translations[{{ $language->code }}][description]"
-                                  class="form-control ck-editor-multi-languages @error("translations.{$language->code}.description") is-invalid @enderror">{{ old("translations.{$language->code}.description") }}</textarea>
-                        @error("translations.{$language->code}.description")
+                        <label class="form-label mt-3">{{ __('cms.products.description') }} ({{ $englishLang->code }})</label>
+                        <textarea name="translations[{{ $englishLang->code }}][description]"
+                                  class="form-control ck-editor-multi-languages @error("translations.{$englishLang->code}.description") is-invalid @enderror">{{ old("translations.{$englishLang->code}.description") }}</textarea>
+                        @error("translations.{$englishLang->code}.description")
                             <div class="invalid-feedback d-block">{{ $message }}</div>
                         @enderror
                     </div>
-                @endforeach
+                @endif
             </div>
                        
             {{-- Category & Brand --}}
