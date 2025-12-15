@@ -27,9 +27,17 @@ class ProductService
             'primaryVariant' => function ($q) {
                 $q->where('is_primary', 1);
             },
+            'images',
         ]);
 
         return DataTables::of($products)
+            ->addColumn('image', function ($product) {
+                $image = $product->images->where('type', 'thumb')->first();
+                if ($image) {
+                    return asset('storage/'.$image->image_url);
+                }
+                return null;
+            })
             ->addColumn('name', function ($product) {
                 $translation = $product->translations->firstWhere('language_code', 'en');
 

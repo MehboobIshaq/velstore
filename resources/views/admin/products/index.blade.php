@@ -17,6 +17,7 @@
             <thead>
                 <tr>
                     <th>{{ __('cms.products.id') }}</th>
+                    <th>{{ __('cms.products.image') }}</th>
                     <th>{{ __('cms.products.name') }}</th>                    
                     <th>{{ __('cms.products.price') }}</th>                   
                     <th>{{ __('cms.products.status') }}</th>
@@ -79,6 +80,18 @@
             },
             columns: [
                 { data: 'id', name: 'id' },
+                { 
+                    data: 'image', 
+                    name: 'image',
+                    orderable: false,
+                    searchable: false,
+                    render: function(data, type, row) {
+                        if (data) {
+                            return `<img src="${data}" alt="Product Image" style="max-width: 80px; max-height: 80px; border-radius: 5px;">`;
+                        }
+                        return '<span class="text-muted">No Image</span>';
+                    }
+                },
                 { data: 'name', name: 'name' },               
                 { data: 'price', name: 'price' },              
                 { 
