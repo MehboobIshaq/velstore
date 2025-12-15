@@ -32,6 +32,8 @@
         <a href="#" class="text-dark fs-5"><i class="fab fa-twitter"></i></a>
         <a href="#" class="text-dark fs-5"><i class="fab fa-instagram"></i></a>
         <a href="#" class="text-dark fs-5"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="text-dark fs-5"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="text-dark fs-5"><i class="fab fa-pinterest-p"></i></a>
     </div>
     </div>
 
